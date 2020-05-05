@@ -1,0 +1,24 @@
+program: VGG_Dynamic_Validation.py
+method: grid
+metric:
+  name: Test_Accuracy
+  goal: maximize
+parameters:
+  learning_rate:
+    values: [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
+  optimizer:
+    values: [1]
+  norm:
+    values: [2]
+  batch-size:
+    value: 256
+  cuda:
+    value: 0
+  seed:
+    values: [1,3]
+  valid-size:
+    value: 5000
+  early-stopping:
+    value: 1
+  patience:
+    15
